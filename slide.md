@@ -20,6 +20,7 @@ ___
 - 交互に駒を動かして、相手の「王」の駒を先に取れば勝ち。
 - 将棋のプロがいる。（有名なプロ棋士 羽生善治さん）
 ___
+#### 将棋盤
 ![syougi](image/shougi.jpg)
 ___
 #### 電王戦
@@ -35,8 +36,10 @@ ___
 #### コンピュータが考えた指し手をロボットが指す！
 ![denoutesan](image/denoutesan.jpg)
 ___
+#### 電王戦のようす
 ![denoutesan](image/denou_2.jpg)
 ___
+#### 電王戦のようす
 ![denoutesan](image/denou_f.jpg)
 ___
 #### コンピューター将棋の歴史は古く、電王戦よりも前から。
@@ -47,11 +50,13 @@ ___
     - 近年はGWに開催されている。
     - 仕様は公開されている。
     - [CSAサーバ プロトコル ver.1.2.1](http://www.computer-shogi.org/protocol/tcp_ip_client_121.html)
+
 ___
 #### インターネット上の対戦サーバ
 **Floodgate**
 
 [http://wdoor.c.u-tokyo.ac.jp/shogi/](http://wdoor.c.u-tokyo.ac.jp/shogi/)
+
 ___
 #### ローカル環境で動く対戦サーバ
   
@@ -59,6 +64,7 @@ ___
 - [http://shogi-server.osdn.jp/](http://shogi-server.osdn.jp/)
 - ruby 1.8 系統を用意する。
 - 自分は、手元で2.0系や2.1系で動かしている。
+
 ___
 自分でクライアントを作って接続してみる
 
@@ -74,7 +80,7 @@ ___
 要するに手順のおやくそくのこと。
 ___
 #### それって吉本新喜劇やん！
-![kuwabara](image/kuwabara.jpg)
+![yoshimoto](image/kuwabara.jpg)
 ___
 ```
  Client >> ごめんください。  
