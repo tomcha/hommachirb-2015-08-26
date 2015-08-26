@@ -2,11 +2,27 @@
   第6回 hommachirb
 ___
 #### 自己紹介
+
 - 名前 tomcha
 - twitter @tomcha_
 - blog Perlがくしゅう帳(Rubyも)
 ![photo](image/twitter_icon_mini.png)
 
+___
+#### エンジニアのお祭りYAPC::Asia 2015
+
+[http://yapcasia.org/2015/](http://yapcasia.org/2015/)
+
+詳しくは技術評論社のYAPC::Asia Tokyo 2015 スペシャルレポートで
+
+[http://gihyo.jp/news/report/01/yapcasia2015](http://gihyo.jp/news/report/01/yapcasia2015)
+___
+#### 宣伝
+
+- 9/12(土)グランフロント大阪内 ナレッジサロンで「なにわPerl」というもくもく会やります。
+- 参加者募集中です。
+- 詳しくはDoorKeeper「 なにわPerl」で検索
+- あと、「Perl入学式」というプログラミング初心者向け勉強会もサポーターで参加しています。
 ___
 #### 今日の内容
 - コンピューター将棋について
@@ -33,10 +49,10 @@ ___
 ![denousen](image/denousen_logo.jpg)
 
 ___
-- 2012年 第1回電王戦 米長邦雄(負け) VS ボンクラーズ（勝ち）
-- 2013年 第2回電王戦 プロ棋士(1勝) コンピューター（3勝）1引き分け
-- 2014年 第3回電王戦 プロ棋士(1勝) コンピューター（4勝）
-- 2015年 電王戦Final プロ棋士(3勝) コンピューター（2勝）
+- 2012年 第1回 コンピューターの勝ち
+- 2013年 第2回 コンピューターの3勝1敗1引き分けプロ棋士(1勝) コンピューター（3勝）1引き分け
+- 2014年 第3回 コンピューターの4勝1敗
+- 2015年 Final コンピューター2勝3敗
 - ※2013年から5vs5の団体戦、2014年よりソフトの事前貸出
 
 ___
@@ -46,10 +62,6 @@ ___
 ___
 #### 電王戦のようす
 ![denoutesan](image/denou_2.jpg)
-
-___
-#### 電王戦のようす
-![denoutesan](image/denou_f.jpg)
 
 ___
 #### コンピューター将棋の歴史は古く、電王戦よりも前から。
@@ -108,20 +120,23 @@ ___
 ___
 #### [CSAサーバプロトコルver1.2.1](http://www.computer-shogi.org/protocol/tcp_ip_server_121.html)
 ```
-ログイン C to S
+ログイン (C -> S)
 LOGIN <username> <password>
-認証成功 S to C
+  
+認証成功 (S -> C)
 LOGIN:<username> OK
-対局に参加 C to S
-AGREE[ <GameID>]
-対局開始 S to C
+  
+対局に参加 (C -> S)
+AGREE <GameID>
+  
+対局開始 (S -> C)
 START:<GameID>
 ```
 
 ___
 #### 手番の時の指し手のやりとり
 ```
-指し手 C to S
+指し手 (C -> S)
 +7776FU
 指し手が合法のメッセージ S to C
 +7776FU,T12
@@ -149,6 +164,27 @@ ___
   - writeメソッド・・・引数の文字列を（サーバーへ）出力する。(IOクラス)
   - getメソッド・・・送られてきた文字列を取得する。(IOクラス)
   - [実際に書いたコード](https://github.com/tomcha/shogi/blob/master/agent.rb)
+
+___
+#### newメソッド
+```
+sock = TCPSocket.open("server_name", 4082)
+```
+
+___
+#### writeメソッド
+```
+sock.write("output text\n")
+```
+
+___
+#### getsメソッド
+```
+while(c = sock.gets.chomp!)
+  //得たテキストを何らかの処理など 
+  //puts c など
+end
+```
 
 ___
 時間があればデモします。
